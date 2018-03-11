@@ -1,0 +1,45 @@
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+
+            <a class="navbar-brand" href="">Shorten URL</a>
+        </div>
+
+    </div>
+</div>
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>Shorten URL</h1>
+        <form (ngSubmit)="saveUrl()" #bookForm="ngForm">
+            <div *ngIf="valid_original" class="alert alert-danger error"><strong>Введён недействительный адрес! </strong></div>
+
+            <input type="text" name="original_url" [(ngModel)]="urls.original_url"
+                   placeholder="Paste a link to shorten it" required>
+            <input type="submit" id="submit" value="Shorten" [disabled]="!bookForm.form.valid">
+
+            <label>Or you can type desired URL</label>
+
+            <!--<div class="alert alert-danger error"><strong>Введённый URL уже занят! </strong></div>-->
+
+            <input type="text" placeholder="Desired URL">
+
+            <div class="imitate"></div>
+
+            <div *ngIf="short" class="alert alert-success error">
+                Успешно! Для вас сгенерирован следующий адрес: <a target="_blank" href="http://localhost:3000/{{short}}">http://localhost:3000/<strong>{{short}}</strong></a>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<div class="container">
+
+    <hr>
+
+    <footer>
+        <p>&copy; FOOTER NOT READY YET</p>
+    </footer>
+</div> <!-- /container -->
+
