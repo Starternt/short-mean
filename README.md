@@ -1,1 +1,1 @@
-Not ready yet, field "Desired url" don't work. yet
+Not ready yet, field "Desired url" doesn't work. yet
